@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app" class="grid">
+  <h1>Vue <b>Sortable Table</b> 📄</h1>
+  <hr>
+  
+  <label>Users per page</label>
+  <select v-model="pageSizeModel">
+    <option value="3">3</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="25">25</option>
+  </select>
+  
+  <table>
+    <thead>
+      <tr>
+        <th :class="{ sorted: sort === 'id' }" @click="sortBy('id')">
+          Id
+        </th>
+        <th :class="{ sorted: sort === 'name' }" @click="sortBy('name')">
+          Name</th>
+        <th :class="{ sorted: sort === 'surname' }" @click="sortBy('surname')" >
+          Surname
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="user in sortedUsers">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name | capitalize }}</td>
+        <td>{{ user.surname | capitalize }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="controls">
+    <button class="btn btn-sm" :disabled="!hasPage(-1)" @click="prevPage">←</button> 
+    <button class="btn btn-sm" :disabled="!hasPage(1)"  @click="nextPage">→</button>
+  </div>
+  
+  <hr>
+  <h2>New User 😊</h2>
+  <form v-on:submit.prevent="addUser">
+    <input type="text" v-model="newUser.name" placeholder="Name" required>
+    <input type="text" v-model="newUser.surname" placeholder="Surname" required>
+    <button type="submit" class="btn">Add user</button>
+  </form>
+</div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

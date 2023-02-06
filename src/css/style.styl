@@ -1,0 +1,144 @@
+*, *:after, *:before { box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+	font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 1.8rem;
+	color: #111;  
+	background: #f4f4f4;
+}
+h1, h2 {
+  margin: 0 0 1rem 0;
+  font-weight: normal;
+  text-align: center;
+}
+b { font-weight: bold; }
+p { 
+  margin: 0;
+  line-height: 2.0;
+}
+hr {
+  width: 70%;
+  margin: 4rem auto;
+  border: 0;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+form { width: 100%; }
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+input, select {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 4rem;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  font: inherit;
+  font-size: 1.6rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  &::placeholder { color: rgba(0, 0, 0, 0.4); }
+}
+
+table {
+	width: 100%;
+  margin: auto;
+	border-spacing: 0;
+}
+  td, th {
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.05);
+  }
+  th {
+    padding: 2.0rem 1.0rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;   
+    &.sorted { color: #f04; }
+  }
+  td {
+    padding: 0.5rem 1.0rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    
+  }
+  tr:hover td { background: rgba(0, 0, 0, 0.03); }
+
+
+.controls { 
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin: 2rem 0 2rem 0;
+  padding: 1rem 2rem;  
+  color: #111;
+  background: transparent;
+  border: 0.1rem solid #111;
+  outline: 0;
+  border-radius: 0.3rem;
+  
+  font: inherit;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  
+  transition: all 0.25s ease;
+  
+  &.btn-sm {
+    display: inline-block;
+    width: 10rem;
+    margin: 1rem;
+  }
+  &:visited  { color: #111; }
+  &:disabled, &:disabled:hover { 
+    color: rgba(0, 0, 0, 0.1); 
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    cursor: initial;
+  }
+  &:hover, &:focus {
+    border: 0.1rem solid #f04;
+    color: #f04; 
+  }
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  width: 70rem;
+  margin: 4rem auto;
+  padding: 4rem;
+  border-radius: 0.3rem;
+  background: #fff;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.10),
+              0 0 3rem rgba(0, 0, 0, 0.03);
+}
+
+@media only screen and (max-width: 48.0rem) {
+  hr { width: 100%; }
+  #app { 
+    width: 90%;
+    padding: 4rem 2rem;
+  }
+  .btn.btn-sm { 
+    width: 40%;
+    margin: 3%;
+  }
+}
