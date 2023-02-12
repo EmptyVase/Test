@@ -2,7 +2,7 @@
 <!-- eslint-disable vue/no-deprecated-filter -->
 <template>
   <div>
-    <h1>Vue <b>Sortable Table</b> 📄</h1>
+    <h1>Vue <b>Table test</b> 📄</h1>
     <hr>
 
     <label>Users per page</label>
@@ -30,7 +30,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in  sortedUsers">
+        <tr v-for="user in  sortedUsers" :key="user">
           <td>{{ user.id }}</td>
           <td>{{ user.login  }}</td>
           <td>{{ user.order  }}</td>
@@ -59,12 +59,12 @@
 export default {
 data: () => ({
     users: [
-			{ id: 0,  login: 'smith@gmail.com',     order: '312'    ,  status: 'Ценитель красоты'},
-      { id: 1,  login: 'lenin@gmail.com',     order: '120'  ,  status: 'Поставщик аксессуаров'},
-      { id: 2,  login: 'mask@gmail.com',     order: '98'    , status: 'Конкурент миндздрава'},
-      { id: 3,  login: 'dog@mail.ru',       order: '64' ,  status: 'рыбак'},
-      { id: 4,  login: 'nightmare@mail.ru',    order: '34' , status: 'охотник'},
-      { id: 5,  login: 'cat@mail.ru',   order: '1'  ,  status: 'Ценитель красоты'},
+			{ id: 0,  login: 'smith@gmail.com',     order: 312    ,  status: 'Ценитель красоты'},
+      { id: 1,  login: 'lenin@gmail.com',     order: 120  ,  status: 'Поставщик аксессуаров'},
+      { id: 2,  login: 'mask@gmail.com',     order: 98    , status: 'Конкурент миндздрава'},
+      { id: 3,  login: 'dog@mail.ru',       order: 64 ,  status: 'рыбак'},
+      { id: 4,  login: 'nightmare@mail.ru',    order: 34 , status: 'охотник'},
+      { id: 5,  login: 'cat@mail.ru',   order: 1  ,  status: 'Ценитель красоты'},
     ],
     newUser: { login: '', order: '', status: '' },
     sort: 'id',
